@@ -5,13 +5,11 @@
 replicaCount: 2
 
 image:
-  repository:  azureregistry07.azurecr.io/azureregistry07
+  repository: akhil07registry.azurecr.io/my-node-app
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "167"
+  tag: "29"
 
-imagePullSecrets:
-  - name: argocd-image-updater-secret
 nameOverride: ""
 fullnameOverride: ""
 
@@ -61,10 +59,6 @@ ingress:
   #      - chart-example.local
 
 resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   # limits:
   #   cpu: 100m
   #   memory: 128Mi
@@ -88,18 +82,8 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
-# Additional volumes on the output Deployment definition.
 volumes: []
-# - name: foo
-#   secret:
-#     secretName: mysecret
-#     optional: false
-
-# Additional volumeMounts on the output Deployment definition.
 volumeMounts: []
-# - name: foo
-#   mountPath: "/etc/foo"
-#   readOnly: true
 
 nodeSelector: {}
 
