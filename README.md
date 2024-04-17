@@ -1,1 +1,1 @@
-# helm-chart-nodeapp1
+# helm-chart-manual
